@@ -1,0 +1,47 @@
+#container {
+  width:100%;
+  left: 5px;
+  top: 5px;
+}
+
+
+.origin,.destination {
+  font-weight: bold;
+  text-align: center;
+  background-color: #e0ffe0;
+}
+
+.mypoup .popup {
+  min-width:80% !important;
+  min-height:20% !important;
+  }
+.mypoup .popup-head{
+    background-color:red;
+  }
+.mypoup .popup-title{
+      font-size:24px;
+      color :white;
+  }
+.mypoup .popup-body{
+        font-size:18px;
+        color:red;
+        text-align : center;
+  }
+
+  .mypouplogin .popup {
+    min-width:80% !important;
+    min-height:20% !important;
+    }
+  .mypouplogin .popup-head{
+      background-color:Royalblue;
+    }
+  .mypouplogin .popup-title{
+        font-size:24px;
+        color :white;
+    }
+  .mypouplogin .popup-body{
+          font-size:18px;
+          color:Royalblue;
+          text-align : center;
+    }
+  /**/
