@@ -1,0 +1,53 @@
+<ion-view view-title="Home">
+  <ion-content class="padding" style="background: url(img/home.jpg) center; background-size: cover;">
+     <div class="card animated fadeInUpBig" style="background:Orange;text-align:center"><h4 style="color:white"><b>ABOUT SMARTPLUG</b></h4>
+		  <div class="item item-text-wrap">
+			  <div style="text-align:justify">
+				    smartPLUG merupakan prototipe perangkat cerdas yang digunakan untuk mengelola pemakaian peralatan listrik AC rumah tangga. Tujuannya untuk memberi kemudahan pada pengguna
+            dalam upaya meningkatkan efisiensi pemakaian dan penghematan energi listrik.
+			  </div>
+		  </div>
+	   </div>
+     <div class="card animated fadeInUpBig" style="background:Gainsboro;text-align:center"><h4 style="color:Firebrick"><b> NETWORK </b></h4>
+      <div class="item item-text-wrap" style="text-align:justify">
+		    <ion-item>
+			    <strong>You are currently :</strong> &nbsp {{connectionType}}
+		    </ion-item>
+		    <ion-item>
+			    <strong>Network Type : </strong> &nbsp {{networkType}}
+		    </ion-item>
+      </div>
+     </div>
+     <div class="card animated fadeInUpBig" style="background:darkcyan;text-align:center"><h4 style="color:white"><b>STATUS KENDALI CERDAS</b></h4>
+		  <div class="item item-text-wrap" style="text-align:justify">
+			  <ion-item>
+          <div><b>Security System </b></div>
+          <big>Window/ Door Alarm : <big id="doorsistemkeamanan"> - </big></big><br>
+          <big>Motion Alarm : <big id="motionsistemkeamanan"> - </big></big>
+        </ion-item>
+        <ion-item>
+          <div><b>Temperature Trigger </b></div>
+          <big>Device 1 : <big id="temperaturetrigger_device1"> - </big></big><br>
+          <big>Set temperature : <big id="temperaturetrigger_device1_setsuhu"> - </big></big><br>
+          <br>
+          <big>Device 2 : <big id="temperaturetrigger_device2"> - </big></big><br>
+          <big>Set temperature : <big id="temperaturetrigger_device2_setsuhu"> - </big></big><br>
+        </ion-item>
+        <ion-item>
+          <div><b>Window/ Door Trigger </b></div>
+          <big>Device 1 : <big id="Doortrigger_device1"> - </big></big><br>
+          <big>Device 2 : <big id="Doortrigger_device2"> - </big></big>
+        </ion-item>
+        <ion-item>
+          <div><b>Scheduler </b></div>
+          <big>Device 1 : <big id="scheduler_device1"> - </big></big><br>
+          <big>Time start : <big id="scheduler_device1_timestart"> - </big></big>
+          <big>Time stop : <big id="scheduler_device1_timestop"> - </big></big><br><br>
+          <big>Device 2 : <big id="scheduler_device2"> - </big></big><br>
+          <big>Time start : <big id="scheduler_device2_timestart"> - </big></big>
+          <big>Time stop : <big id="scheduler_device2_timestop"> - </big></big><br>
+        </ion-item>
+		  </div>
+	   </div>
+  </ion-content>
+</ion-view>

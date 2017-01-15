@@ -1,0 +1,42 @@
+<ion-view view-title="Setting Device">
+	<ion-content class="padding" style="background: url(img/subscriber.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:Royalblue;text-align:center; font-size=300%;"><h3 style="color:white"><b>Window Alarm [Subscriber]</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<ion-item>
+					<div ng-Show=SavedWindow>
+						<div><b> Saved Setting </b></div><br>
+						<div style="text-align:left">
+							<big>Read Api key : <big id="WindowApiKey"> - </big> </big><br>
+							<big>Channel ID: <big id="WindowChannelID"> - </big> </big><br>
+							<big>Field: <big id="WindowField"> - </big> </big><br><br><br>
+						</div>
+						<button class="button button-full icon-left ion-ios-trash-outline button-assertive" ng-click="removeWindow()">Delete</button>
+					</div>
+					<div ng-Show=!SavedWindow>
+						<div> No Saved Setting </div>
+					</div>
+				</ion-item>
+				<ion-item>
+				<div ng-Show=!SavedWindow>
+					<b><div> New Setting</div></b><br>
+          <div class="list list-inset">
+						<div style="text-align:left"> Read Api Key : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Window.ApiKey">
+          	</label>
+						<div style="text-align:left"> Channel ID: </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="number" style="color:white;font-size:100%" placeholder="Channel ID" ng-model="Window.ChannelID">
+          	</label>
+						<div style="text-align:left"> Field : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="number" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Window.Field">
+          	</label>
+          </div>
+          <button class="button button-full icon-left ion-checkmark button-positive" ng-click="SaveWindow()">Save</button>
+			</div>
+			</ion-item>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

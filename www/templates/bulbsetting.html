@@ -1,0 +1,64 @@
+<ion-view view-title="Setting Device">
+	<ion-content class="padding" style="background: url(img/sub.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:Royalblue;text-align:center; font-size=300%;"><h3 style="color:white"><b>Bulb [Subscriber]</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<ion-item>
+					<div ng-Show=SavedBulb>
+						<div><b> Saved Setting </b></div><br>
+						<div style="text-align:left">
+							<b><div style="text-align:left"> Current </div></b>
+							<big>Read Api Key : <big id="BulbApiKeyCurrent"> - </big> </big><br>
+							<big>Channel ID : <big id="BulbChannelIDCurrent"> - </big> </big><br>
+							<big>Field : <big id="BulbFieldCurrent"> - </big> </big><br><br>
+							<b><div style="text-align:left"> State </div></b>
+							<big>Read Api Key : <big id="BulbApiKeyState"> - </big> </big><br>
+							<big>Channel ID: <big id="BulbChannelIDState"> - </big> </big><br>
+							<big>Field: <big id="BulbFieldState"> - </big> </big><br><br><br>
+						</div>
+						<button class="button button-full icon-left ion-ios-trash-outline button-assertive" ng-click="removeBulb()">Delete</button>
+					</div>
+					<div ng-Show=!SavedBulb>
+						<div> No Saved Setting </div>
+					</div>
+				</ion-item>
+				<ion-item>
+				<div ng-Show=!SavedBulb>
+					<b><div> New Setting</div></b><br>
+					<b><div style="text-align:left"> Current</div></b>
+					<div class="list list-inset">
+						<div style="text-align:left"> Read API Key : </div>
+						<label class="item item-input"  style="background:teal">
+							<input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Bulb.ApiKeyCurrent">
+						</label>
+						<div style="text-align:left"> Channel ID : </div>
+						<label class="item item-input"  style="background:teal">
+							<input type="text" style="color:white;font-size:100%" placeholder="Channel ID" ng-model="Bulb.ChannelIDCurrent">
+						</label>
+						<div style="text-align:left"> Field : </div>
+						<label class="item item-input"  style="background:teal">
+							<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Bulb.FieldCurrent">
+						</label>
+					</div>
+					<br>
+					<b><div style="text-align:left"> State </div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Read API Key : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Bulb.ApiKeyState">
+          	</label>
+						<div style="text-align:left"> Channel ID : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Channel ID" ng-model="Bulb.ChannelIDState">
+          	</label>
+						<div style="text-align:left"> Field : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Bulb.FieldState">
+          	</label>
+          </div>
+          <button class="button button-full icon-left ion-checkmark button-positive" ng-click="SaveBulb()">Save</button>
+			</div>
+			</ion-item>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

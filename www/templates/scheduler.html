@@ -1,0 +1,115 @@
+<ion-view view-title="Setting Kendali Cerdas">
+	<ion-content class="padding" style="background: url(img/scheduler.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:Royalblue;text-align:center; font-size=300%;"><h3 style="color:white"><b>Scheduler</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<ion-item>
+					<div ng-Show=SavedScheduler>
+						<div><b> Saved Setting </b></div><br>
+						<div style="text-align:left">
+							<b><div style="text-align:left"> Device 1-Intruksi</div></b>
+							<big>Write Api Key : <big id="Device1ApiKeyIntruksiScheduler"> - </big> </big><br>
+							<big>Field Number : <big id="Device1FieldIntruksiScheduler"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Device 1-Time start</div></b>
+							<big>Write Api Key : <big id="Device1ApiKeyTimeStartScheduler"> - </big> </big><br>
+							<big>Field Number : <big id="Device1FieldTimeStartScheduler"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Device 1-Time Stop</div></b>
+							<big>Write Api Key : <big id="Device1ApiKeyTimeStopScheduler"> - </big> </big><br>
+							<big>Field Number : <big id="Device1FieldTimeStopScheduler"> - </big> </big><br><br><br>
+							<b><div style="text-align:left"> Device 2-Intruksi</div></b>
+							<big>Write Api Key : <big id="Device2ApiKeyIntruksiScheduler"> - </big> </big><br>
+							<big>Field Number : <big id="Device2FieldIntruksiScheduler"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Device 2-Time start</div></b>
+							<big>Write Api Key : <big id="Device2ApiKeyTimeStartScheduler"> - </big> </big><br>
+							<big>Field Number : <big id="Device2FieldTimeStartScheduler"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Device 2-Time Stop</div></b>
+							<big>Write Api Key : <big id="Device2ApiKeyTimeStopScheduler"> - </big> </big><br>
+							<big>Field Number : <big id="Device2FieldTimeStopScheduler"> - </big> </big><br><br>
+						</div>
+						<button class="button button-full icon-left ion-ios-trash-outline button-assertive" ng-click="removeScheduler()">Delete</button>
+					</div>
+					<div ng-Show=!SavedScheduler>
+						<div> No Saved Setting </div>
+					</div>
+				</ion-item>
+				<ion-item>
+				<div ng-Show=!SavedScheduler>
+					<b><div> New Setting</div></b><br>
+					<b><div style="text-align:left"> Device 1-Intruksi</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Scheduler.Device1ApiKeyIntruksi">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Scheduler.Device1FieldIntruksi">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 1-Time Start</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Scheduler.Device1ApiKeyTimeStart">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Scheduler.Device1FieldTimeStart">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 1-Time Stop</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Scheduler.Device1ApiKeyTimeStop">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Scheduler.Device1FieldTimeStop">
+            </label>
+          </div>
+					<br>
+					<br>
+					<b><div style="text-align:left"> Device 2-Intruksi</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Scheduler.Device2ApiKeyIntruksi">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Scheduler.Device2FieldIntruksi">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 2-Time Start</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Scheduler.Device2ApiKeyTimeStart">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Scheduler.Device2FieldTimeStart">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 2-Time Stop</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Scheduler.Device2ApiKeyTimeStop">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Scheduler.Device2FieldTimeStop">
+            </label>
+          </div>
+          <button class="button button-full icon-left ion-checkmark button-positive" ng-click="SaveScheduler()">Save</button>
+			</div>
+			</ion-item>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

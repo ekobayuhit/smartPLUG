@@ -1,0 +1,84 @@
+<ion-view view-title="Setting Kendali Cerdas">
+	<ion-content class="padding" style="background: url(img/alarm1.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:Royalblue;text-align:center; font-size=300%;"><h3 style="color:white"><b>Temperature Trigger</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<ion-item>
+					<div ng-Show=SavedAutoTemp>
+						<div><b> Saved Setting </b></div><br>
+						<div style="text-align:left">
+							<b><div style="text-align:left"> Device 1-Intruksi Alarm</div></b>
+							<big>Write Api Key : <big id="Device1ApiKeyAutoTemp"> - </big> </big><br>
+							<big>Field Number : <big id="Device1FieldAutoTemp"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Device 1-Set Point Temperature</div></b>
+							<big>Write Api Key : <big id="Device1ApiKeySetPointAutoTemp"> - </big> </big><br>
+							<big>Field Number : <big id="Device1FieldSetPointAutoTemp"> - </big> </big><br><br><br>
+							<b><div style="text-align:left"> Device 2-Intruksi Alarm</div></b>
+							<big>Write Api Key : <big id="Device2ApiKeyAutoTemp"> - </big> </big><br>
+							<big>Field Number : <big id="Device2FieldAutoTemp"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Device 2-Set Point Temperature</div></b>
+							<big>Write Api Key : <big id="Device2ApiKeySetPointAutoTemp"> - </big> </big><br>
+							<big>Field Number : <big id="Device2FieldSetPointAutoTemp"> - </big> </big><br><br>
+						</div>
+						<button class="button button-full icon-left ion-ios-trash-outline button-assertive" ng-click="removeAutoTemp()">Delete</button>
+					</div>
+					<div ng-Show=!SavedAutoTemp>
+						<div> No Saved Setting </div>
+					</div>
+				</ion-item>
+				<ion-item>
+				<div ng-Show=!SavedAutoTemp>
+					<b><div> New Setting</div></b><br>
+					<b><div style="text-align:left"> Device 1-Intruksi Alarm</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="AutoTemp.Device1ApiKey">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="AutoTemp.Device1Field">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 1-Set Point Temperature</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="AutoTemp.Device1SetPointApiKey">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="AutoTemp.Device1SetPointField">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 2-Intruksi Alarm</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="AutoTemp.Device2ApiKey">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="AutoTemp.Device2Field">
+            </label>
+          </div>
+					<br>
+					<b><div style="text-align:left"> Device 2-Set Point Temperature</div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write Api Key : </div>
+            <label class="item item-input"  style="background:teal">
+              <input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="AutoTemp.Device2SetPointApiKey">
+            </label>
+						<div style="text-align:left"> Field Number : </div>
+            <label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="AutoTemp.Device2SetPointField">
+            </label>
+          </div>
+          <button class="button button-full icon-left ion-checkmark button-positive" ng-click="SaveAutoTemp()">Save</button>
+			</div>
+			</ion-item>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

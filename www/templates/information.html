@@ -1,0 +1,71 @@
+<ion-view view-title="Information">
+   <ion-content class="padding" style="background: url(img/information.jpg) center; background-size: cover">
+     <div class="card animated fadeInUpBig" style="background:orange;text-align:center"><h4 style="color:white"><b>MODE KENDALI</b></h4>
+     <div class="item item-text-wrap" style="text-align:justify">
+       <ion-item>
+         Terdapat dua mode kendali dalam sistem ini, yaitu kendali manual dan kendali cerdas. Pada mode kendali manual, pengguna dapat menyalakan
+         dan mematikan kipas/ lampu secara manual dengan menekan button. Pada kendali cerdas, sistem akan menjalankan skenario pengambilan keputusan sehingga
+         dalam kondisi tertentu pengguna tidak perlu menekan button secara manual.
+       </ion-item>
+     </div>
+    </div>
+     <div class="card animated fadeInUpBig" style="background:purple; text-align:center; font-size=300%;"><h4 style="color:white"><b> Hardware </b></h4>
+			<div class="item item-text-wrap">
+				<div class="list">
+          <ion-item>
+            <h2> Sensor Arus AC/DC ACS712-30A </h2>
+            <p style="text-align:justify"> ACS712 bekerja berdasarkan prinsip Hall Effect.
+			Prinsip kerja dari sensor ini adalah arus hasil pembacaan mengalir melalui kabel tembaga yang kemudian menghasilkan medan magnet kemudian ditangkap oleh Hall IC dan diubah menjadi tegangan proporsional.
+			Ketepatan pada tegangan output diperoleh dari BiCMOS IC hall yang diprogram agar memiliki akurasi yang baik.
+			Sensor ini memiliki pembacaan sensor dengan presisi yang tinggi, karena di dalamnya terdapat rangkaian low-offset liner Hall dengan satu lintasan yang terbuat dari tembaga.  
+            </p>
+          </ion-item>
+		            <ion-item>
+            <h2> Relai Digital 1-Channel</h2>
+            <p style="text-align:justify"> Relai merupakan aktuator yang bekerja berdasarkan prinsip saklar. Terdapat dua jenis mode operasi relai yaitu NO (Normally Open) dan NC (Normally Close). 
+			Pada project ini mode operasi yang digunakan yaitu NC dimana relai akan memutus beban ketika diberi logika LOW dan akan menyambungkan beban ketika diberi logika HIGH.
+            </p>
+          </ion-item>
+          <ion-item>
+            <h2> Dev.Board nodeMCU 1.0 <h2>
+            <p style="text-align:justify"> NodeMCU 1.0 merupakan development board berbasis ESP8266 12-E. 
+			Board ini mempunyai satu buah channel analog ADC 10-bit (A0) dan 8 buah channel digital (D0-D7). 
+			Tegangan operasi board ini adalah 3.3 Volt dengan range tegangan input (pada pin VIN) 7-12 Volt.
+			Board ini dapat dioperasikan dalam mode AP (Access Point); Station (Client); dan AP+STA.
+            </p>
+  				</ion-item>
+        </div>
+			</div>
+		</div>
+		<div class="card animated fadeInUpBig" style="background:Teal; text-align:center; font-size=300%"><h4 style="color:white"><b> Software </b></h4>
+			<div class="item item-text-wrap">
+				<div class="list">
+          <ion-item>
+            <h2> 	Framework Ionic </h2>
+            <p style="text-align:justify"> Framework Ionic adalah framework HTML5 yang membantu kita dalam
+                            mengembangkan aplikasi mobile dengan teknologi web seperti HTML, CSS dan Javascript.
+                            Framework Ionic menggunakan AngularJS sebagai framework berbasis web dan menggunakan
+                            Cordova untuk membangun aplikasi mobile. Framework Ionic platform memiliki lisensi opensource.
+            </p>
+          </ion-item>
+          <ion-item>
+            <h2> 	Cloud Database ThingSpeak.com </h2>
+            <p style="text-align:justify"> ThingSpeak merupakan open source "Internet of Things" aplikasi dan API untuk menyimpan dan mengambil data menggunakan HTTP melalui Internet atau melalui Local Area Network.
+              Selain menyimpan dan mengambil data numerik dan alfanumerik, API ThingSpeak memungkinkan untuk pengolahan data numerik seperti timescaling, rata-rata, median, menjumlahkan, dan pembulatan.
+              Setiap Saluran ThingSpeak  mendukung entri data hingga 8 bidang data. Channel feed dukungan JSON, XML, dan format CSV untuk integrasi ke dalam aplikasi.
+            </p>
+          </ion-item>
+        </div>
+			</div>
+		</div>
+		<div class="card animated fadeInUpBig" style="background:Midnightblue; text-align:center"><h4 style="color:white"><b> Resource</b></h4>
+			<div class="item item-text-wrap">
+    			<ion-list>
+            <ion-item>
+    				  <p>All image background under Creative Commons Zero (CC0) license from https://www.pixabay.com/</p>
+            </ion-item>
+    			</ion-list>
+    		</div>
+    	</div>
+  </ion-content>
+</ion-view>

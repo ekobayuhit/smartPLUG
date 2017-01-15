@@ -1,0 +1,113 @@
+<ion-view view-title="Status">
+	<ion-content class="padding" style="background: url(img/status.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:indigo;text-align:center; font-size=300%;"><h3 style="color:white"><b>CONNECTION</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<div id="idtes"> - </div>
+				<ion-item>
+					<div class="row">
+						<div class="col col-50"><big id="hari"></big></div>
+						<div class="col col-50"><big id="clock" style="font-size:18"></big></div>
+					</div>
+				</ion-item>
+				<ion-item>
+					<div style="text-align:center;font-size:100%"> Status : <big style="font-size:150%" id="status_koneksi"> - </big></div>
+					<div class="row">
+						<div class="col col-40">
+							<button class="button button-full icon-left ion-ios-loop-strong button-positive" ng-click="Connect()" style="font-size:75%">Connect</button>
+						</div>
+						<div class="col col-60">
+							<button class="button button-full icon-left ion-ios-close-outline button-assertive" ng-click="Disconnect()" style="font-size:75%">Disconnect</button>
+						</div>
+				</div>
+				</ion-item>
+			</div>
+		</div>
+		<div class="card animated fadeInUpBig" style="background:Gold;text-align:center; font-size=300%;"><h3 style="color:purple"><b>SENSOR NODE</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+			<ion-item>
+				<div class="row">
+					<div class="col col-50">
+						<big style="text-align:center; font-size:100%;" class="icon-left ion-ios-eye-outline" ng-click="goMotion()"> Motion :</big>
+					</div>
+					<div class="col col-50">
+						<big style="text-align:center; font-size:100%;" class="icon-left ion-thermometer" ng-click="goTemperature()"> Temperature :</big>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						<big style="text-align:center; font-size:150%;" id="gerak"> - </big></br>
+						<big style="text-align:center; font-size:75%;" id="gerakDate"> - </big></br></br>
+					</div>
+					<div class="col col-50">
+						<big style="text-align:center;font-size:150%"><big style="text-align:center; font-size:150%" id="suhu"> - </big></big></br>
+						<big style="text-align:center; font-size:75%" id="suhuDate"> - </big></br></br>
+					</div>
+				</div>
+				<big style="text-align:center; font-size:100%;" class="icon-left ion-ios-locked-outline" ng-click="goWindow()"> Window/Door State :</big>
+				<big style="text-align:center; font-size:150%;" id="windowstate"> - </big></br>
+				<big style="text-align:center; font-size:75%;" id="windowstateDate"> - </big></br></br>
+			</ion-item>
+		</div>
+	</div>
+	<div class="card animated fadeInUpBig" style="background:Darkmagenta;text-align:center; font-size=300%;"><h3 style="color:white"><b>TERMINAL NODE</b></h3>
+		<div class="item item-text-wrap" style="text-align:center">
+			<ion-item>
+				<div class="row">
+  				<div class="col col-50">
+						<img src="img/Bulb.png" style="height:70%;width:50%" ng-click="goBulbSetting()">
+						<br><big style="text-align:center; font-size:80%;"> Device 1 </big>
+						<div> Status Sent : <big id="statuscode"> - </big></div>
+					</div>
+  				<div class="col col-50">
+						<big style="text-align:center; font-size:75%;"> Current : </big>
+						<big style="text-align:center; font-size:125%;" id="Current1"> - A </big></br>
+						<big style="text-align:center; font-size:75%;" id="Current1Date"> - </big></br></br>
+						<big style="text-align:center; font-size:75%;"> State Device 1 : </big>
+						<big style="text-align:center; font-size:125%;" id="StateBulb"> - </big></br>
+						<big style="text-align:center; font-size:75%;" id="StateBulbDate"> - </big></br></br>
+						<div ng-show="!bulb">
+							<button id="RelaiONBulb" class="button button-full icon-left ion-ios-email button-positive" ng-click="ONBulb()">
+								ON
+							</button>
+						</div>
+						<div ng-show="bulb">
+							<button id="RelaiOFFBulb" class="button button-full icon-left ion-ios-email-outline button-assertive" ng-click="OFFBulb()">
+								OFF
+							</button>
+						</div>
+						<div class="icon-left ion-ios-gear-outline" ng-click=goSettingRelay1()> Setting Relay</div>
+					</div>
+        </div>
+			</ion-item>
+			<ion-item>
+				<div class="row">
+					<div class="col col-50">
+						<img src="img/Fan.png" style="height:90%;width:100%" ng-click="goFanSetting()">
+						<br><big style="text-align:center; font-size:80%;"> Device 2 </big>
+						<div> Status Sent : <big id="statuscode2"> - </big></div>
+					</div>
+					<div class="col col-50">
+						<big style="text-align:center; font-size:75%;"> Current : </big>
+						<big style="text-align:center; font-size:125%;" id="Current2"> - A </big></br>
+						<big style="text-align:center; font-size:75%;" id="Current2Date"> -  </big></br></br>
+						<big style="text-align:center; font-size:75%;"> State Device 2 : </big>
+						<big style="text-align:center; font-size:125%;" id="StateFan"> - </big></br>
+						<big style="text-align:center; font-size:75%;" id="StateFanDate"> - </big></br></br>
+						<div ng-show="!fan">
+							<button class="button button-full icon-left ion-ios-email button-positive" ng-click="ONFan()">
+								ON
+							</button>
+						</div>
+						<div ng-show="fan">
+							<button class="button button-full icon-left ion-ios-email-outline button-assertive" ng-click="OFFFan()">
+								OFF
+							</button>
+						</div>
+						<div class="icon-left ion-ios-gear-outline" ng-click=goSettingRelay2()> Setting Relay</div>
+					</div>
+				</div>
+			</ion-item>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

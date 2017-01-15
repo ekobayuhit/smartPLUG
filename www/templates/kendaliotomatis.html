@@ -1,0 +1,150 @@
+<ion-view view-title="Kendali Otomatis">
+	<ion-content class="padding" style="background: url(img/kendali_cerdas.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:Dodgerblue;text-align:center; font-size=300%;"><h3 style="color:white"><b>KENDALI CERDAS</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<ion-item style="text-align:justify;background-color:Teal;color:white">
+					 <div>Kendali cerdas memadukan sensor node dan terminal node untuk memberi kemudahan pengguna
+						 dalam mengatur penggunaan peralatan elektronik. Skenario untuk terminal node (Temp trigger,
+						 Window/ Door Trigger, Scheduler) hanya bisa digunakan salah satu saja.
+					 </div>
+				</ion-item>
+				<ion-item style="text-align:center;">
+					<div>List skenario :  </div>
+				</ion-item>
+				<ion-item style="text-align:justify">
+						<div class="icon-left ion-ios-gear-outline" ng-click=goSistemKeamanan()><b>Security System</b></div>
+					 <ion-toggle color="dark" ng-model="skenario.sistemkeamanan">
+						<p>Security System/ Sistem keamanan berfungsi sebagai early warning system untuk monitoring keamanan rumah.</p>
+					 </ion-toggle>
+					 <div ng-show="skenario.sistemkeamanan">
+						 <ion-checkbox ng-model="sistemkeamanan.windowalarm">Window/Door Alarm </ion-checkbox>
+						 <ion-checkbox ng-model="sistemkeamanan.motionalarm">Motion Alarm </ion-checkbox>
+						 <div ng-show="sistemkeamanan.windowalarm">
+							 <div><b> Window/Door Alarm </b></div>
+							 <big>Status sent : <big id="statuscodekeamananDoor"> - </big></big>
+							 <div ng-show="!AutoKeamananDoor">
+								 <button class="button button-block button-positive" ng-click="AktifAutoKeamananDoor()">Aktifkan</button>
+						   </div>
+							 <div ng-show="AutoKeamananDoor">
+								 <button class="button button-block button-assertive" ng-click="ShutDownAutoKeamananDoor()">Matikan</button>
+						   </div>
+						 </div>
+						 <div ng-show="sistemkeamanan.motionalarm">
+							 <div><b> Motion Alarm </b></div>
+							 <big>Status sent : <big id="statuscodekeamananMotion"> - </big></big>
+							 <div ng-show="!AutoKeamananMotion">
+						 		 <button class="button button-block button-positive" ng-click="AktifAutoKeamananMotion()">Aktifkan</button>
+							 </div>
+							 <div ng-show="AutoKeamananMotion">
+								 <button class="button button-block button-assertive" ng-click="ShutDownAutoKeamananMotion()">Matikan</button>
+							 </div>
+						 </div>
+					 </div>
+					 <div class="icon-left ion-ios-gear-outline" ng-click=goSuhu()><b> Temperature Trigger</b></div>
+					 <ion-toggle ng-model="skenario.suhu">
+						 <p>Jika suhu kamar lebih dari suhu set point maka device akan menyala secara otomatis. Switch On untuk pilih device. Untuk menghindari swing maka device telah diberi toleransi +- 2&deg;C</p>
+					 </ion-toggle>
+					 <div ng-show="skenario.suhu">
+						 <ion-checkbox ng-model="suhu.device1">Device 1 </ion-checkbox>
+						 <ion-checkbox ng-model="suhu.device2">Device 2 </ion-checkbox>
+						 <div ng-show="suhu.device1">
+							 <div><b> Device 1</b></div>
+  					 	 <big>Status sent : <big id="statuscodealarmtempdevice1"> - </big></big>
+							 <br>
+							 <div><b>Suhu setpoint</b> </div>
+							 <input type="number" placeholder="&deg;C" ng-model="a.setsuhualarm"></input>
+							 <div ng-show="!Device1StateAutoTemp">
+						 		 <button class="button button-block button-positive" ng-click="AktifDevice1TempAlarm()">Aktifkan</button>
+							 </div>
+							 <div ng-show="Device1StateAutoTemp">
+								 <button class="button button-block button-assertive" ng-click="ShutDownDevice1TempAlarm()">Matikan</button>
+							 </div>
+						 </div>
+						 <div ng-show="suhu.device2">
+							 <div><b> Device 2 </b></div>
+							 <big>Status sent : <big id="statuscodealarmtempdevice2"> - </big></big>
+							 <br>
+							 <div><b>Suhu setpoint</b> </div>
+							 <input type="number" placeholder="&deg;C" ng-model="b.setsuhualarm"></input>
+							 <div ng-show="!Device2StateAutoTemp">
+						 		 <button class="button button-block button-positive" ng-click="AktifDevice2TempAlarm()">Aktifkan</button>
+							 </div>
+							 <div ng-show="Device2StateAutoTemp">
+								 <button class="button button-block button-assertive" ng-click="ShutDownDevice2TempAlarm()">Matikan</button>
+							 </div>
+						 </div>
+					 </div>
+					 <div class="icon-left ion-ios-gear-outline" ng-click=goGerak()><b> Window/Door Trigger</b></div>
+					 <ion-toggle ng-model="skenario.doortrigger">
+						 <p>Jika pintu atau jendela terbuka maka device akan menyala secara otomatis. Switch On untuk pilih device.</p>
+					 </ion-toggle>
+					 <div ng-show="skenario.doortrigger">
+						 <ion-checkbox ng-model="doortrigger.device1">Device 1 </ion-checkbox>
+						 <ion-checkbox ng-model="doortrigger.device2">Device 2 </ion-checkbox>
+						 <div ng-show="doortrigger.device1">
+							 <div><b> Device 1</b></div>
+							 <big>Status sent : <big id="statuscodealarmDoordevice1"> - </big></big>
+							 <div ng-show="!Device1StateAutoDoor">
+								 <button class="button button-block button-positive" ng-click="AktifDevice1DoorAlarm()">Aktifkan</button>
+							 </div>
+							 <div ng-show="Device1StateAutoDoor">
+								 <button class="button button-block button-assertive" ng-click="ShutDownDevice1DoorAlarm()">Matikan</button>
+							 </div>
+						 </div>
+						 <div ng-show="doortrigger.device2">
+							 <div><b> Device 2 </b></div>
+							 <big>Status sent : <big id="statuscodealarmDoordevice2"> - </big></big>
+							 <div ng-show="!Device2StateAutoDoor">
+								 <button class="button button-block button-positive" ng-click="AktifDevice2DoorAlarm()">Aktifkan</button>
+							 </div>
+							 <div ng-show="Device2StateAutoDoor">
+								 <button class="button button-block button-assertive" ng-click="ShutDownDevice2DoorAlarm()">Matikan</button>
+							 </div>
+						 </div>
+					 </div>
+					 <div class="icon-left ion-ios-gear-outline" ng-click=goScheduler()><b> Scheduler </b></div>
+					 <ion-toggle ng-model="skenario.scheduler">
+						 <p>Pengguna dapat mengatur waktu nyala dan mati peralatan elektronik.
+							 Switch On untuk pilih device.</p>
+							<p>
+							 Format Time : hourminutesecond (pukul 8.30 p.m -> 203000)
+						 </p>
+					 </ion-toggle>
+					 <div ng-show="skenario.scheduler">
+						 <ion-checkbox ng-model="scheduler.device1">Device 1 </ion-checkbox>
+						 <ion-checkbox ng-model="scheduler.device2">Device 2 </ion-checkbox>
+						 <div ng-show="scheduler.device1">
+							 <div><b> Device 1</b></div>
+							 <big>Status sent : <big id="statuscodeschedulerdevice1"> - </big></big>
+							 <div><b>Time Start</b> </div>
+							 <input type="text" placeholder="Time Start" ng-model="c.device1setTimeStart"></input>
+							 <div><b>Time Stop</b> </div>
+							 <input type="text" placeholder="Time Stop" ng-model="c.device1setTimeStop"></input>
+							 <div ng-show="!Device1StateScheduler">
+								 <button class="button button-block button-positive" ng-click="AktifDevice1Scheduler()">Aktifkan</button>
+							 </div>
+							 <div ng-show="Device1StateScheduler">
+								 <button class="button button-block button-assertive" ng-click="ShutDownDevice1Scheduler()">Matikan</button>
+							 </div>
+						 </div>
+						 <div ng-show="scheduler.device2">
+							 <div><b> Device 2 </b></div>
+							 <big>Status sent : <big id="statuscodeschedulerdevice2"> - </big></big>
+							 <div><b>Time Start</b> </div>
+							 <input type="text" placeholder="Time Start" ng-model="d.device2setTimeStart"></input>
+							 <div><b>Time Stop</b> </div>
+							 <input type="text" placeholder="Time Stop" ng-model="d.device2setTimeStop"></input>
+							 <div ng-show="!Device2StateScheduler">
+								 <button class="button button-block button-positive" ng-click="AktifDevice2Scheduler()">Aktifkan</button>
+							 </div>
+							 <div ng-show="Device2StateScheduler">
+								 <button class="button button-block button-assertive" ng-click="ShutDownDevice2Scheduler()">Matikan</button>
+							 </div>
+						 </div>
+					 </div>
+				</ion-item>
+				 </div>
+			 </div>
+			</div>
+  </ion-content>
+</ion-view>

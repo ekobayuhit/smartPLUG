@@ -1,0 +1,54 @@
+<ion-view view-title="Setting Security System">
+	<ion-content class="padding" style="background: url(img/alarm.jpg) center; background-size: cover;">
+		<div class="card animated fadeInUpBig" style="background:Royalblue;text-align:center; font-size=300%;"><h3 style="color:white"><b>Door/Motion Alarm</b></h3>
+			<div class="item item-text-wrap" style="text-align:center">
+				<ion-item>
+					<div ng-Show=SavedKeamanan>
+						<div><b> Saved Setting </b></div><br>
+						<div style="text-align:left">
+							<b><div style="text-align:left"> Window/ Door Alarm</div></b>
+							<big>Write Api Key : <big id="KeamananApiKeyDoor"> - </big> </big><br>
+							<big>Field : <big id="KeamananFieldDoor"> - </big> </big><br><br>
+							<b><div style="text-align:left"> Motion Alarm </div></b>
+							<big>Write Api Key : <big id="KeamananApiKeyMotion"> - </big> </big><br>
+							<big>Field: <big id="KeamananFieldMotion"> - </big> </big><br><br><br>
+						</div>
+						<button class="button button-full icon-left ion-ios-trash-outline button-assertive" ng-click="removeKeamanan()">Delete</button>
+					</div>
+					<div ng-Show=!SavedKeamanan>
+						<div> No Saved Setting </div>
+					</div>
+				</ion-item>
+				<ion-item>
+				<div ng-Show=!SavedKeamanan>
+					<b><div> New Setting</div></b><br>
+					<b><div style="text-align:left"> Window/door Alarm</div></b>
+					<div class="list list-inset">
+						<div style="text-align:left"> Write API Key : </div>
+						<label class="item item-input"  style="background:teal">
+							<input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Keamanan.ApiKeyDoor">
+						</label>
+						<div style="text-align:left"> Field : </div>
+						<label class="item item-input"  style="background:teal">
+							<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Keamanan.FieldDoor">
+						</label>
+					</div>
+					<br>
+					<b><div style="text-align:left"> Motion Alarm </div></b>
+          <div class="list list-inset">
+						<div style="text-align:left"> Write API Key : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Api Key" ng-model="Keamanan.ApiKeyMotion">
+          	</label>
+						<div style="text-align:left"> Field : </div>
+          	<label class="item item-input"  style="background:teal">
+            	<input type="text" style="color:white;font-size:100%" placeholder="Field Number" ng-model="Keamanan.FieldMotion">
+          	</label>
+          </div>
+          <button class="button button-full icon-left ion-checkmark button-positive" ng-click="SaveKeamanan()">Save</button>
+			</div>
+			</ion-item>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>
