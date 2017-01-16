@@ -6,13 +6,13 @@
 Layer smartPLUG dapat dilihat pada gambar di bawah ini. 
 <br>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/spec-smartPLUG.png" width="400" height="500"/> </p>
-<p align="justify">smartPLUG terdiri atas terminal node dan sensor node. Terminal node merupakan node yang digunakan untuk melakukan monitoring arus dan pengendalian (ON/OFF) piranti elektronik. Sensor node merupakan node tambahan yang berisi sensor-sensor yang dapat digunakan untuk mempersepsikan kondisi lingkungan.</p>
-<br><br><br>
+<br>
+<p align="justify">smartPLUG terdiri atas terminal node dan sensor node. Terminal node merupakan node yang digunakan untuk melakukan monitoring arus dan pengendalian (ON/OFF) piranti elektronik. Sensor node merupakan node tambahan yang berisi sensor suhu DS18B20 dan MC-38 window/door alarm yang dapat digunakan untuk mempersepsikan kondisi lingkungan.</p>
+<br>
 <p align="center"><H1> Terminal NODE </H1></p>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/SmartPLUG.jpg" width="700" height="400"/>> </p>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/20161218_094312.jpg" width="500" height="400"/> </p>
-
-<br><br><br>
+<br>
 <p align="center"><H1>Sensor NODE </H1></p>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/sensornode_mock_up_hardware.jpg" width="500" height="400"/></p>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/1482050447313.jpg" width="400" height="400"/></p>
