@@ -16,3 +16,13 @@ Layer smartPLUG dapat dilihat pada gambar di bawah ini.
 <p align="center"><H1>Sensor NODE </H1></p>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/sensornode_mock_up_hardware.jpg" width="500" height="400"/></p>
 <p align="center"><img src ="https://github.com/ekobayuhit/smartPLUG/blob/www/1482050447313.jpg" width="400" height="400"/></p>
+
+<br>
+<br>
+Credit : 
+<br>
+Aliffah Aminatus Shalihah (H1C013014)
+<br>
+Prayogo Ismu Abdillah (H1C013049)
+<br>
+Bayu Eko Saputro (H1C013078)
